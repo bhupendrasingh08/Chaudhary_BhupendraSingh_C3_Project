@@ -68,12 +68,18 @@ public class Restaurant {
     }
 
     public int getTotalCost(List<String> items) {
-    	int counter = 0;
     	int totalCost = 0;
     	if(items.size() > 0) {
+    		for(String itemName : items) {
+        		for(Item item : menu) {
+        			if(item.getName().equalsIgnoreCase(itemName)) {
+        				totalCost += item.getPrice();
+        			}
+        		}
+        	}
     		return totalCost;
     	}
-    	return 0;
+    	return totalCost;
     }
 
 }

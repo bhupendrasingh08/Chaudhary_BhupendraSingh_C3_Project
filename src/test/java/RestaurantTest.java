@@ -73,5 +73,15 @@ class RestaurantTest {
         int total = restaurant.getTotalCost(selectedItems);
         assertEquals(0, total);
     }
+
+     @Test
+    public void if_items_are_selected_then_total_cost_should_be_sum_of_all_the_selected_items() {
+    	List<String> selectedItems = new ArrayList<>();
+    	selectedItems.add("Sweet corn soup");
+    	selectedItems.add("Vegetable lasagne");
+    	int total = restaurant.getTotalCost(selectedItems);
+    	assertEquals(388, total);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<<<<<MENU ITEM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
 }
